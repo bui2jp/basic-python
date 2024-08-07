@@ -4,7 +4,7 @@
 
 ### 前提
 
-wsl ubuntu で作業
+wsl ubuntu or Mac で作業
 python のインストールは pyenv
 python の仮想環境について
 
@@ -52,3 +52,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 hi, this is python.
 >>> exit()
 ```
+
+# Mac /w anaconda
+Anaconda3 2024.06-1をインストール
