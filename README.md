@@ -56,4 +56,5 @@ hi, this is python.
 # Mac /w anaconda
 Anaconda3 2024.06-1をインストール
 
-test
+# 実績管理
+2024/11/25からやり直しPythonを開始
