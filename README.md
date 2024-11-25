@@ -55,3 +55,5 @@ hi, this is python.
 
 # Mac /w anaconda
 Anaconda3 2024.06-1をインストール
+
+test
