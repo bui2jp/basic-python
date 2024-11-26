@@ -390,3 +390,87 @@ print([i for i in t if i % 2 == 0])
 
 t2 = (5,6,7,8,9,10)
 print([i*j for i in t for j in t2]) # わかりにくくなるので利用しても１つまで
+
+# 辞書内包表記
+w = ['mon', 'tue', 'wed']
+f = ['coffee', 'milk', 'water']
+print(w, f) # list
+
+d = {}
+print(d)
+
+for x, y in zip(w, f):
+    d[x] = y
+print(d) # dict
+
+d2 = { x: y for x, y in zip(w, f)}
+print(d2)
+
+# 集合内包表記
+s = set()
+for i in range(10):
+    if i%2 == 0:
+        s.add(i)
+print(s)
+
+s2 = {i for i in range(10) if i %2 == 0}
+print(s2)
+
+#ジェネレーター内包表記
+def gen1():
+    for i  in range(10):
+        yield i
+
+g1 = gen1()
+print(type(g1))
+print(next(g1))
+print(next(g1))
+print(next(g1))
+
+g2 = (i for i in range(10)) # tupleとにているな
+print(type(g2))
+print(next(g2))
+
+
+# スコープ
+animal = 'cat' # global変数
+def func():
+    global animal #再定義して書き換える
+    animal = 'dog'
+    print(animal)
+#    print(locals())
+#    print(globals())    
+func()
+print(animal)
+
+
+
+
+# 例外
+l = [1,2,3,4,5]
+i=4
+
+try:
+    l[i]
+except IndexError as e:
+    print(f'except occur {e}')
+except Exception as e: # すべてをキャッチするのはやめた方が良い
+    print(f'except occur {e}')
+else:
+    print('else 成功時のみ')
+finally:
+    print('call finally')
+
+print('end')
+
+# 独自の例外
+class MyError1(Exception):
+    pass
+
+def check():
+    raise MyError1('独自のエラー')
+
+try:
+    check()
+except MyError1 as e:
+    print(e)
